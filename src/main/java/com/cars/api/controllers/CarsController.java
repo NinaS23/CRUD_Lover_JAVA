@@ -1,5 +1,6 @@
 package com.cars.api.controllers;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,9 +26,10 @@ public class CarsController {
     }
 
     @GetMapping
-    public void GetAllCarsRegisters(){
-       System.out.println(repository.findAll()); 
-       
+    public List<Car> GetAllCarsRegisters(){
+        List<Car> cars = repository.findAll();
+         return cars;   
     }
 
 }
+
