@@ -58,4 +58,26 @@ the url used is
 }
 ```
 
+###### request _`GET`_
+just need to use this url after a POST 
+```git
+ http://localhost:8080/api/cars
+ ```
 
+###### request _`GET by id`_
+replace the id in this url with the id of the car you want to get
+```git
+ http://localhost:8080/api/cars/{id}
+ ```
+
+
+###### request _`DELETE`_
+replace the id in this url with the id of the car you want to delete
+```git
+ http://localhost:8080/api/cars/{id}
+ ```
+###### request _`UPDATE`_
+replace the id in this url with the id of the car you want to update
+```git
+ http://localhost:8080/api/cars/{id}
+ ```
