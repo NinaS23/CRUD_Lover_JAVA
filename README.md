@@ -22,7 +22,7 @@
 - [X] UPDATE a car by id
 
 # about the project
-a project based on another project on my github, which is: [cars_api_java](https://github.com/NinaS23/Cars_Api_Java) and [cars_api_java](https://github.com/NinaS23/ModelaAi_JAVA), I chose to make it it separately for educational purposes.
+a project based on another project on my github, which is: [cars_api_java](https://github.com/NinaS23/Cars_Api_Java) and [ModelaAí](https://github.com/NinaS23/ModelaAi_JAVA), I chose to make it it separately for educational purposes.
 The goal of this part of the project was to create the services folder and use controllers to send http status and communicate with services and services to communicate with the repository.
 In this part of the project I used the Validation I/O to validate the Car model.
 
