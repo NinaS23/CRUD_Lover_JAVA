@@ -54,11 +54,11 @@ public class CarsController {
     public Optional<Car> findById(@PathVariable Long id) {
         Optional<Car> car = service.findById(id);
         return car;
-    } 
-    
+    }
+
     @PutMapping("/{id}")
     public void updateCar(@PathVariable Long id, @RequestBody @Valid CarsDTO req) {
-		service.updateCar(id, req);
-	} 
+        service.updateCar(id, req);
+    }
 
 }

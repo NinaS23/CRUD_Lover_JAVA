@@ -15,11 +15,10 @@ import com.cars.api.model.Car;
 public class CarService {
 
     @Autowired
-	private CarRepository repository;
-
+    private CarRepository repository;
 
     public void RegisterCar(Car data) {
-       repository.save(data);
+        repository.save(data);
     }
 
     public List<Car> GetAllCarsRegisters() {
@@ -38,15 +37,15 @@ public class CarService {
         return car;
     }
 
-    public void updateCar(Long id, CarsDTO data){
+    public void updateCar(Long id, CarsDTO data) {
         repository.findById(id).map(e -> {
-			e.setAnoModelo(data.anoModelo());
-		    e.setFabricante(data.fabricante());
+            e.setAnoModelo(data.anoModelo());
+            e.setFabricante(data.fabricante());
             e.setDataFabricacao(data.dataFabricacao());
             e.setValor(data.valor());
             e.setModelo(data.modelo());
-			return repository.save(e);
-		});
+            return repository.save(e);
+        });
     }
 
 }
