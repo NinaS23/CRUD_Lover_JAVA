@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cars.api.dto.CarsDTO;
@@ -25,7 +26,7 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/api/cars")
 public class CarsController {
-    
+
     @Autowired
     private CarService service;
 
@@ -54,5 +55,10 @@ public class CarsController {
         Optional<Car> car = service.findById(id);
         return car;
     } 
+    
+    @PutMapping("/{id}")
+    public void updateCar(@PathVariable Long id, @RequestBody @Valid CarsDTO req) {
+		service.updateCar(id, req);
+	} 
 
 }

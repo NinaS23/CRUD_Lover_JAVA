@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.cars.api.repository.CarRepository;
+import com.cars.api.dto.CarsDTO;
 import com.cars.api.model.Car;
 
 @Service
@@ -35,6 +36,17 @@ public class CarService {
     public Optional<Car> findById(@PathVariable Long id) {
         Optional<Car> car = repository.findById(id);
         return car;
+    }
+
+    public void updateCar(Long id, CarsDTO data){
+        repository.findById(id).map(e -> {
+			e.setAnoModelo(data.anoModelo());
+		    e.setFabricante(data.fabricante());
+            e.setDataFabricacao(data.dataFabricacao());
+            e.setValor(data.valor());
+            e.setModelo(data.modelo());
+			return repository.save(e);
+		});
     }
 
 }
