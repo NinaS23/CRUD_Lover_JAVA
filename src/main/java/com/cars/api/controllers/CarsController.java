@@ -10,14 +10,16 @@ import com.cars.api.dto.CarsDTO;
 import com.cars.api.model.Car;
 import com.cars.api.repository.CarRepository;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/cars")
-public class carsController {
+public class CarsController {
     @Autowired
     private CarRepository repository;
 
     @PostMapping
-    public void RegisterCar(@RequestBody CarsDTO req) {
+    public void RegisterCar(@RequestBody @Valid CarsDTO req) {
         repository.save(new Car(req));
     }
 
