@@ -1,6 +1,7 @@
 package com.cars.api.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,12 @@ public class CarsController {
     @PostMapping
     public void RegisterCar(@RequestBody @Valid CarsDTO req) {
         repository.save(new Car(req));
+    }
+
+    @GetMapping
+    public void GetAllCarsRegisters(){
+       System.out.println(repository.findAll()); 
+       
     }
 
 }
