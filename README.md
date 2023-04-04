@@ -30,7 +30,7 @@ In this part of the project I used the Validation I/O to validate the Car model.
 To clone the project, run the following command:
 
 ```git
-git clone https://github.com/NinaS23/CarsApi_Java.git
+git clone https://github.com/NinaS23/Crud_Lover_JAVA.git
 ```
 Then navigate to the project folder in ApiApplication.java and:
 
